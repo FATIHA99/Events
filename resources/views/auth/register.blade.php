@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Eventify - Register</title>
+        <title>Eventora - Register</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -35,7 +35,7 @@
                 <div class="flex items-center justify-between">
                     <a href="/">
                         <img src="https://i.postimg.cc/J7SH8bTm/Blue-Modern-Vezzra-Modern-Technology-Logo.png" 
-                             class="h-12" alt="Eventify Logo">
+                             class="h-12" alt="Eventora Logo">
                     </a>
                     <div class="flex items-center space-x-4">
                      
@@ -51,7 +51,7 @@
         <!-- Registration Section -->
         <div class="min-h-screen auth-bg flex items-center justify-center p-4">
             <div class="form-container w-full max-w-md rounded-2xl shadow-xl p-8">
-                <h2 class="text-3xl font-bold text-center mb-8">Join Eventify</h2>
+                <h2 class="text-3xl font-bold text-center mb-8">Join Eventora</h2>
                 
                 <form method="POST" action="{{ route('register') }}">
                     @csrf

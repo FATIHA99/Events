@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Eventify - Login</title>
+        <title>Eventora - Login</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,7 +36,7 @@
                 <div class="flex items-center justify-between">
                     <a href="/">
                         <img src="https://i.postimg.cc/J7SH8bTm/Blue-Modern-Vezzra-Modern-Technology-Logo.png" 
-                             class="h-12" alt="Eventify Logo">
+                             class="h-12" alt="Eventora Logo">
                     </a>
                     <div class="flex space-x-4">
                       

@@ -1,22 +1,18 @@
 <x-app-layout>
     <div class="min-h-screen bg-gray-50 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header Section -->
-                <div class="text-center mb-12">
-                <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-extrabold sm:text-4xl big-title">
                     Event Management
                 </h1>
-            
             </div>
 
             <div class="flex justify-end mb-6">
-                <a href="{{ route('admin.create') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <a href="{{ route('admin.create') }}" class="inline-flex items-center px-4 py-2 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 admin-add-btn">
                     + Add Event
                 </a>
             </div>
             
-
-            <!-- Success Message -->
             @if (session('success'))
                 <div class="rounded-md bg-green-50 p-4 mb-8 max-w-3xl mx-auto">
                     <div class="flex">
@@ -34,9 +30,6 @@
                 </div>
             @endif
 
-         
-
-            <!-- Events List Section -->
             <div class="bg-white shadow rounded-lg overflow-hidden">
                 <div class="px-6 py-5 border-b border-gray-200 bg-gray-50">
                     <h3 class="text-lg font-medium leading-6 text-gray-900">Upcoming Events</h3>
@@ -129,9 +122,8 @@
                                                 <form action="{{ route('admin.destroy', $event->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="inline-flex items-center px-3 py-1  shadow-sm text-sm font-medium rounded-md text-red-600 bg-white hover:bg-red-50">Delete</button>
+                                                    <button type="submit" class="inline-flex items-center px-3 py-1 shadow-sm text-sm font-medium rounded-md text-red-600 bg-white hover:bg-red-50">Delete</button>
                                                 </form>
-                                            </div>
                                             </td>
                                         </tr>
                                     @endforeach

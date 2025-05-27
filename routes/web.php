@@ -30,25 +30,24 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        Route::get('/dashboard/{id}', [EventController::class, 'show'])->name('events.show');
+        Route::get('/dashboard', [EventController::class, 'allEvents'])->name('dashboard');
+        Route::get('/events/filter', [EventController::class, 'filteredEvents'])->name('events.filter');
+        Route::post('/events/{event}/rsvp', [EventController::class, 'rsvp'])
+            ->middleware('auth')
+            ->name('events.rsvp');
 
+    // Admin
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/dashboard', [EventController::class, 'index'])->name('admin.index');
-        // Route::post('/admin/dashboard', [EventController::class, 'store'])->name('admin.store');
-
         Route::get('/admin/events/create', [EventController::class, 'create'])->name('admin.create');
-Route::post('/admin/events', [EventController::class, 'store'])->name('admin.store');
-Route::get('/admin/events/{id}', [EventController::class, 'show'])->name('admin.show');
-Route::get('/admin/events/{id}/edit', [EventController::class, 'edit'])->name('admin.edit');
-Route::put('/admin/events/{id}', [EventController::class, 'update'])->name('admin.update');
-Route::delete('/admin/events/{id}', [EventController::class, 'destroy'])->name('admin.destroy');
-
+        Route::post('/admin/events', [EventController::class, 'store'])->name('admin.store');
+        Route::get('/admin/events/{id}/edit', [EventController::class, 'edit'])->name('admin.edit');
+        Route::put('/admin/events/{id}', [EventController::class, 'update'])->name('admin.update');
+        Route::delete('/admin/events/{id}', [EventController::class, 'destroy'])->name('admin.destroy');
 
     });
-  
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
